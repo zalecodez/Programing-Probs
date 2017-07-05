@@ -34,7 +34,6 @@ public class Expression{
         this.negate = negate;
     }
     public static float operate(float op1, char f, float op2){
-        System.out.println(op1 +" "+f+" "+op2);
         switch(f){
             case '+':
                 return op1 + op2;
@@ -59,12 +58,6 @@ public class Expression{
 
     public static float calculate(ArrayList<Expression> whole){
 
-        System.out.println("List");
-        for(int k = 0; k < whole.size(); k++){
-            System.out.print(whole.get(k).toString()+" ");
-        }
-        System.out.println("\nEndList");
-
         //base case
         if(whole.size() == 1 && whole.get(0).type == OpType.VALUE){
             if(whole.get(0).negate){
@@ -85,7 +78,6 @@ public class Expression{
             else{
                 node1 = whole.get(0).value;
             }
-                System.out.println(whole.get(0).toString());
 
             if(whole.get(2).negate){
                 node2 = -1*whole.get(2).value;
@@ -93,7 +85,6 @@ public class Expression{
             else{
                 node2 = whole.get(2).value;
             }
-                System.out.println(whole.get(2).toString());
 
             return operate(
                     node1, 
@@ -104,7 +95,6 @@ public class Expression{
 
         if(whole.size() == 1){
             //expression
-                System.out.println(whole.get(0).toString());
             if(whole.get(0).negate){
                 return -1*calculate(parse(whole.get(0).toString()));
             }
@@ -117,14 +107,12 @@ public class Expression{
         if(whole.size() == 3){
             float node1, node2;
             
-                System.out.println(whole.get(0).toString());
             if(whole.get(0).negate){
                 node1 = -1*calculate(parse(whole.get(0).toString()));
             }
             else{
                 node1 = calculate(parse(whole.get(0).toString()));
             }
-                System.out.println(whole.get(2).toString());
  
             if(whole.get(2).negate){
                 node2 = -1*calculate(parse(whole.get(2).toString()));
@@ -147,8 +135,6 @@ public class Expression{
         char op1 = whole.get(1).operation;
         char op2 = whole.get(3).operation;
         if(priority(op1) > priority(op2)){
-            System.out.println(op1+" > "+op2);
-                System.out.println(whole.get(0).toString());
             if(whole.get(0).negate){
                 part1 = -1*calculate(parse(whole.get(0).toString()));
             }
@@ -156,7 +142,6 @@ public class Expression{
                 part1 = calculate(parse(whole.get(0).toString()));
             }
 
-                System.out.println(whole.get(2).toString());
             if(whole.get(2).negate){
                 part2 = -1*calculate(parse(whole.get(2).toString()));
             }
@@ -174,8 +159,6 @@ public class Expression{
             return calculate(temp);
         }
         else{
-            System.out.println(op1+" <= "+op2);
-                System.out.println(whole.get(0).toString());
             if(whole.get(0).negate){
                 node1 = -1*calculate(parse(whole.get(0).toString()));
             }
