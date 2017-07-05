@@ -9,9 +9,10 @@ Well Julian... see you at the bar.
 
 Example of use:
 ------------------------------------------------
+```
 $ java Parse 
 
-Enter expression (Enter 'quit' to quit): 
+Enter expression (Enter 'quit' to quit):
 ((((4+3)*(2-1))*(3/1))-((2+5)*(1+1)))
 ANSWER: 7.0
 
@@ -22,9 +23,10 @@ ANSWER: 21.0
 
 (Enter 'quit' to quit): 
 quit
+```
 
 Constraints
 ---------------------------------------------
-No fractional powers
+- No fractional powers
 
 
