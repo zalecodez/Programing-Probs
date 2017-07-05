@@ -3,7 +3,7 @@ Info
 This is a simple arithmetic expression parser.
 It takes an arithmetic expression as an input and outputs the answer.
 
-I made this because it was a challenge from Julian (julian43). I was promised free beers if I could do it in 3 so... see you at the bar Julian
+I made this because it was a challenge from Julian (julian43). I was promised free beers if I could do it within 3 days so... see you at the bar Julian
 
 
 Example of use:
